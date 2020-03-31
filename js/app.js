@@ -1,50 +1,25 @@
-// Ice Cream Questions
-// 1. Yes or No Question
-// 2. Multiple Possible Answers
-// 3. If they like it, continue rest of app; else, offer smoothie
-// 4. Ask for size of order (provide options)
+// Question  1: Was I born in Colorado? False.
+var q1Prompt = 'Was I born in Colorado?';
+var q1Answer = prompt(q1Prompt).toLowerCase();
 
-var likesIceCream = confirm('Do you like ice cream?');
-console.log('Likes Ice Cream?: ' + likesIceCream);
-
-if(likesIceCream) {
-  console.log('Yum Ice Cream!');
-} else {
-  console.log('Give Smoothie');
+if(q1Answer === 'yes' || q1Answer === 'y') {
+  console.log('');
+} else if(q1Answer === 'no' || q1Answer === 'n') {
+  console.log('');
 }
 
-var favoriteFlavor = prompt('What is your favorite flavor?');
-console.log('Favorite Flavor: ' + favoriteFlavor);
+// Question  2: Was I in the Coast Guard? False.
+var q2Prompt = 'Was I in the Coast Guard?';
+var q2Answer = prompt(q2Prompt).toLowerCase();
 
-if(favoriteFlavor === 'mint chip' || favoriteFlavor === 'Mint chip' || favoriteFlavor === 'Mint Chip') {
-  console.log('GIVE IT TO BRYANT');
-} else if(favoriteFlavor === 'oreo' || favoriteFlavor === 'Oreo') {
-  console.log('GIVE IT TO LINDSEY');
-} else if(favoriteFlavor === 'theTonightDough') {
-  console.log('GIVE IT TO MASON its worth a lot tho');
-} else {
-  console.log('I want to try ' + favoriteFlavor + '. I never tried that before.');
-}
+// Question  3: Do I have a degree in Psychology? True.
+var q3Prompt = 'Do I have a degree in Psychology?';
+var q3Answer = prompt(q3Prompt).toLowerCase();
 
-// == is for loose types, for comparing values of different types
-// === is for strict type comparison
+// Question  4: Is Bade my legal name? False.
+var q4Prompt = 'Is Bade my legal name?';
+var q4Answer = prompt(q4Prompt).toLowerCase();
 
-// PRIMITIVES
-
-// boolean
-true;
-false;
-
-// string
-''; // This evaluates as false
-'abc'; // This evaluates as true
-
-// numbers
-123; // This evaluates as true
-1.23; // This evaluates as true
--50; // This evaluates as true
-0; // This evaluates as false
-
-// others
-null; // This evaluates as false
-undefined; // This evaluates as false
+// Question  5: Do I have prior experience with coding? True
+var q5Prompt = 'Do I have prior experience with coding?';
+var q5Answer = prompt(q5Prompt).toLowerCase();
