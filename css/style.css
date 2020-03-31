@@ -1,7 +1,37 @@
 /* Add five CSS stylings */
 /* 1. Color and bold About Me header */
-/* 2. X */
-/* 3. X */
-/* 4. X */
-/* 5. X */
+/* 2. Set the color of body's background */
+/* 3. Color, italicize, and center 'Biography' header */
+/* 4. Color, center, and add margins to biography paragraph */
+/* 5. Shrink and color footer */
 
+body {
+  background-color: plum;
+}
+
+#aboutme {
+  color: blue;
+  font-weight: 1200;
+  text-align: center;
+  text-decoration: underline;
+}
+
+#biography_heading {
+  color: azure;
+  font-weight: 450;
+  text-align: center;
+}
+
+#biography_text {
+  color: purple;
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+#authorcredit {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 600;
+  margin-left: 50px;
+}
