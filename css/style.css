@@ -5,30 +5,33 @@
 /* 4. Color, center, and add margins to biography paragraph */
 /* 5. Shrink and color footer */
 
+/* Stylings for body of HTML page */
 body {
   background-color: plum;
+  text-align: center;
 }
 
+/* Stylings for elements with aboutme id */
 #aboutme {
   color: blue;
   font-weight: 1200;
-  text-align: center;
   text-decoration: underline;
 }
 
+/* Stylings for elements with biography_heading id */
 #biography_heading {
   color: azure;
   font-weight: 450;
-  text-align: center;
 }
 
+/* Stylings for elements with biography_text id */
 #biography_text {
   color: purple;
-  text-align: center;
   margin-left: 150px;
   margin-right: 150px;
 }
 
+/* Stylings for elements with authorcredit id */
 #authorcredit {
   font-size: 12px;
   font-style: italic;
