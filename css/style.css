@@ -19,16 +19,24 @@ body {
 }
 
 /* Stylings for elements with biography_heading id */
-#biography_heading {
+h2 {
   color: azure;
   font-weight: 450;
 }
 
 /* Stylings for elements with biography_text id */
-#biography_text {
+p {
   color: purple;
   margin-left: 150px;
   margin-right: 150px;
+}
+
+ul {
+  color: purple;
+}
+
+ol {
+  color: purple;
 }
 
 /* Stylings for elements with authorcredit id */

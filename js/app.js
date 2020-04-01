@@ -67,9 +67,9 @@ if(numGuessPrompt == randNumber) {
       numAnswersCorrect++;
       break;
     }
-    
-    if(!answeredCorrectly) alert('Didn\'t guess the number!');
   }
+
+  if(!answeredCorrectly) alert('Didn\'t guess the number!');
 }  
 
 //Multiple Answer Question
