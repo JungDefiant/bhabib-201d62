@@ -1,31 +1,34 @@
 ## Synopsis
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+This project is a webpage with a biography about the author and a short quiz to let the user know about the author.
 
 ## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+The code prompts the user with a question, then stores their answer. If they answer correctly, they get an alert telling them they answered correctly, and vice versa.
+
+```javascript
+var qPrompt = "Question here!"
+var qAnswer = prompt(qPrompt).toLowerCase();
+
+if(qAnswer === 'yes' || qAnswer === 'y') {
+  alert('Correct!');
+} else if(qAnswer === 'no' || qAnswer === 'n') {
+  alert('Wrong!');
+}
+```
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+This project exists to inform the user about the author in an interactive way.
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+You can get the project by simply cloning or downloading the repo and opening index.html into a browser.
 
 ## API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-## Tests
-
-Describe and show how to run the tests with code examples.
-
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+W3Schools CSS: https://www.w3schools.com/cssref/default.asp
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+This project uses the MIT license.
