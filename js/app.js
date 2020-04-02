@@ -20,30 +20,35 @@ alert('Welcome, ' + userName + ', to Bade\'s About Me quiz!');
 
 var numAnswersCorrect = 0;
 
-var prompts = ['Was I born in Colorado?','Was I in the Coast Guard?','Do I have an Associate\'s degree?','Is Bade my legal name?','Do I have prior experience with coding?']
-var corrections = ['Wrong. I was born in New Mexico.','Wrong. I was in the Navy.','Wrong. I do have an Associate\'s degree.','Wrong. My legal name is Cristian.','Wrong. I do have experience in coding.']
-var correctAnswers1to5 = [0,0,1,0,1]
-
-for(let i = 0; i < prompts.length; i++) {
-  if(correctAnswers1to5[i]) {
-    var trueAnswer = ['yes', 'y']
-    var falseAnswer = ['no', 'n']
+function askQuestion(qPrompt, correction, answerFlag) {
+  var trueAnswer, falseAnswer;
+  if(answerFlag) {
+    trueAnswer = ['yes', 'y'];
+    falseAnswer = ['no', 'n'];
   } else {
-    var trueAnswer = ['no', 'n']
-    var falseAnswer = ['yes', 'y']
+    trueAnswer = ['no', 'n'];
+    falseAnswer = ['yes', 'y'];
   }
 
-  let currPrompt = prompt(prompts[i]).toLowerCase();
+  let currPrompt = prompt(qPrompt).toLowerCase();
 
   if(currPrompt === trueAnswer[0] || currPrompt === trueAnswer[1]) {
     console.log('Correct!');
     alert('Correct!');
     numAnswersCorrect++;
   } else if(currPrompt === falseAnswer[0] || currPrompt === falseAnswer[1]) {
-    console.log(corrections[i]);
-    alert(corrections[i]);
+    console.log(correction);
+    alert(correction);
   }
 }
+
+askQuestion('Was I born in Colorado?', 'Wrong. I was born in New Mexico.', 0);
+
+
+// var prompts = ['Was I born in Colorado?','Was I in the Coast Guard?','Do I have an Associate\'s degree?','Is Bade my legal name?','Do I have prior experience with coding?']
+// var corrections = ['Wrong. I was born in New Mexico.','Wrong. I was in the Navy.','Wrong. I do have an Associate\'s degree.','Wrong. My legal name is Cristian.','Wrong. I do have experience in coding.']
+// var correctAnswers1to5 = [0,0,1,0,1]
+
 
 //Random Number Guessing Game
 var maxNumber = 100;
