@@ -51,54 +51,56 @@ askQuestion('Was I born in Colorado?', 'Wrong. I was born in New Mexico.', 0);
 
 
 //Random Number Guessing Game
-var maxNumber = 100;
-var randNumber = Math.random() * Math.floor(maxNumber);
 
-var answeredCorrectly = false;
-var maxTries = 4;
-var numGuessPrompt = prompt('I\'m thinking of a random number. Try to guess it!');
+function playNumberGuess(maxNumber, maxTries){
 
-if(numGuessPrompt == randNumber) {
-  alert('Correct!');
-} else {
-  for (let i = 1; i < maxTries; i++) {
-    if(numGuessPrompt < randNumber) {
-      numGuessPrompt = prompt('Too low! Try again...');
-    } else if(numGuessPrompt > randNumber) {
-      numGuessPrompt = prompt('Too high! Try again...');
-    } else if(numGuessPrompt == randNumber) {
-      alert('Correct!');
-      answeredCorrectly = true;
-      numAnswersCorrect++;
-      break;
+  var randNumber = Math.random() * Math.floor(maxNumber);
+  var answeredCorrectly = false;
+  var numGuessPrompt = prompt('I\'m thinking of a random number from 1 to ' + maxNumber + '. Try to guess it.');
+
+  if(numGuessPrompt === randNumber) {
+    alert('Correct!');
+  } else {
+    for (let i = 1; i < maxTries; i++) {
+      if(numGuessPrompt < randNumber) {
+        numGuessPrompt = prompt('Too low! Try again...');
+      } else if(numGuessPrompt > randNumber) {
+        numGuessPrompt = prompt('Too high! Try again...');
+      } else if(numGuessPrompt === randNumber) {
+        alert('Correct!');
+        answeredCorrectly = true;
+        numAnswersCorrect++;
+        break;
+      }
     }
-  }
 
-  if(!answeredCorrectly) alert('Didn\'t guess the number!');
-}  
+    if(!answeredCorrectly) alert('Didn\'t guess the number!');
+  }
+}
+playNumberGuess(10, 4);
 
 //Multiple Answer Question
-maxTries = 6;
-answeredCorrectly = false;
-var correctAnswers7 = ['Torment: Numenera','Legend Of Zelda: Breath Of The Wild','Armello'];
+// maxTries = 6;
+// answeredCorrectly = false;
+// var correctAnswers7 = ['Torment: Numenera','Legend Of Zelda: Breath Of The Wild','Armello'];
 
-for(let i = 0; i < maxTries; i++) {
-  let lastPrompt = prompt('What are one of my top 3 games?');
+// for(let i = 0; i < maxTries; i++) {
+//   let lastPrompt = prompt('What are one of my top 3 games?');
 
-  for(let i = 0; i < correctAnswers7.length; i++) {
-    if(lastPrompt === correctAnswers7[i]) {
-      alert('Correct!');
-      answeredCorrectly = true;
-      numAnswersCorrect++;
-      break;
-    }
-  }
+//   for(let i = 0; i < correctAnswers7.length; i++) {
+//     if(lastPrompt === correctAnswers7[i]) {
+//       alert('Correct!');
+//       answeredCorrectly = true;
+//       numAnswersCorrect++;
+//       break;
+//     }
+//   }
 
-  if(answeredCorrectly) break;
-  else alert('Wrong answer! Try again!');
-}
+//   if(answeredCorrectly) break;
+//   else alert('Wrong answer! Try again!');
+// }
 
-if(!answeredCorrectly) alert('Didn\'t guess correctly!');
+// if(!answeredCorrectly) alert('Didn\'t guess correctly!');
 
 //Goodbye message
 alert('Thank you for taking the quiz, ' + userName + '. You got ' + numAnswersCorrect + ' correct!');
