@@ -4,17 +4,25 @@ This project is a webpage with a biography about the author and a short quiz to 
 
 ## Code Example
 
-The code prompts the user with a question, then stores their answer. If they answer correctly, they get an alert telling them they answered correctly, and vice versa.
+The code initializes the values for the prompt, the maximum tries, and a variable checking if the question was answered correctly. Then, it runs a *for loop* that asks the question each time. The loop breaks if the question is answered correctly and sends a victory message. Otherwise, it continues to iterate until all tries have been attempted. If all tries have been attempted, the code checks the variable for answering correctly, and it sends a losing message if the user didn't answer correctly. Slight variations on this code exists for each question.
 
 ```javascript
-var qPrompt = "Question here!"
-var qAnswer = prompt(qPrompt).toLowerCase();
+var answeredCorrectly = false;
+var maxTries = 5;
+var thisPrompt = 'Question here!';
 
-if(qAnswer === 'yes' || qAnswer === 'y') {
-  alert('Correct!');
-} else if(qAnswer === 'no' || qAnswer === 'n') {
-  alert('Wrong!');
+for(int i = 0; i < maxTries; i++) {
+  var answer = prompt(thisPrompt);
+  if(answer == 'right answer') {
+    alert('victory message');
+    answeredCorrectly = true;
+    break;
+  } else {
+    alert('wrong answer');
+  }
 }
+
+if(!answeredCorrectly) alert('loser message');
 ```
 
 ## Motivation
