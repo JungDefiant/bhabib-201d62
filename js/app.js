@@ -20,6 +20,7 @@ alert('Welcome, ' + userName + ', to Bade\'s About Me quiz!');
 
 var numAnswersCorrect = 0;
 
+//ask 5 questions
 function askQuestion(qPrompt, correction, answerFlag) {
   var trueAnswer, falseAnswer;
   if(answerFlag) {
@@ -42,63 +43,67 @@ function askQuestion(qPrompt, correction, answerFlag) {
   }
 }
 
-askQuestion('Was I born in Colorado?', 'Wrong. I was born in New Mexico.', 0);
-
-
-// var prompts = ['Was I born in Colorado?','Was I in the Coast Guard?','Do I have an Associate\'s degree?','Is Bade my legal name?','Do I have prior experience with coding?']
-// var corrections = ['Wrong. I was born in New Mexico.','Wrong. I was in the Navy.','Wrong. I do have an Associate\'s degree.','Wrong. My legal name is Cristian.','Wrong. I do have experience in coding.']
-// var correctAnswers1to5 = [0,0,1,0,1]
-
-
 //Random Number Guessing Game
-var maxNumber = 100;
-var randNumber = Math.random() * Math.floor(maxNumber);
+function playNumberGuess(maxNumber, maxTries){
 
-var answeredCorrectly = false;
-var maxTries = 4;
-var numGuessPrompt = prompt('I\'m thinking of a random number. Try to guess it!');
+  var randNumber = Math.random() * Math.floor(maxNumber);
+  randNumber = Math.round(randNumber);
 
-if(numGuessPrompt == randNumber) {
-  alert('Correct!');
-} else {
-  for (let i = 1; i < maxTries; i++) {
-    if(numGuessPrompt < randNumber) {
-      numGuessPrompt = prompt('Too low! Try again...');
-    } else if(numGuessPrompt > randNumber) {
-      numGuessPrompt = prompt('Too high! Try again...');
-    } else if(numGuessPrompt == randNumber) {
-      alert('Correct!');
-      answeredCorrectly = true;
-      numAnswersCorrect++;
-      break;
+  var answeredCorrectly = false;
+  var numGuessPrompt = prompt('I\'m thinking of a random number from 1 to ' + maxNumber + '. Try to guess it.');
+  console.log('random number: ' + randNumber);
+
+  if(numGuessPrompt == randNumber) {
+    alert('Correct!');
+  } else {
+    for (let i = 1; i < maxTries; i++) {
+      if(numGuessPrompt < randNumber) {
+        numGuessPrompt = prompt('Too low! Try again...');
+      } else if(numGuessPrompt > randNumber) {
+        numGuessPrompt = prompt('Too high! Try again...');
+      } else if(numGuessPrompt == randNumber) {
+        alert('Correct!');
+        answeredCorrectly = true;
+        numAnswersCorrect++;
+        break;
+      }
     }
+
+    if(!answeredCorrectly) alert('Didn\'t guess the number!');
   }
-
-  if(!answeredCorrectly) alert('Didn\'t guess the number!');
-}  
-
-//Multiple Answer Question
-maxTries = 6;
-answeredCorrectly = false;
-var correctAnswers7 = ['Torment: Numenera','Legend Of Zelda: Breath Of The Wild','Armello'];
-
-for(let i = 0; i < maxTries; i++) {
-  let lastPrompt = prompt('What are one of my top 3 games?');
-
-  for(let i = 0; i < correctAnswers7.length; i++) {
-    if(lastPrompt === correctAnswers7[i]) {
-      alert('Correct!');
-      answeredCorrectly = true;
-      numAnswersCorrect++;
-      break;
-    }
-  }
-
-  if(answeredCorrectly) break;
-  else alert('Wrong answer! Try again!');
 }
 
-if(!answeredCorrectly) alert('Didn\'t guess correctly!');
+// Multiple Answer Question
+function askMultiAnswerQuestion(correctAnswers, maxTries) {
+  var answeredCorrectly = false;
+
+  for(let i = 0; i < maxTries; i++) {
+    let lastPrompt = prompt('What are one of my top 3 games? Use proper spelling, it\'s important!');
+
+    for(let i = 0; i < correctAnswers.length; i++) {
+      if(lastPrompt === correctAnswers[i]) {
+        alert('Correct!');
+        answeredCorrectly = true;
+        numAnswersCorrect++;
+        break;
+      }
+    }
+
+    if(answeredCorrectly) break;
+    else alert('Wrong answer! Try again!');
+  }
+
+  if(!answeredCorrectly) alert('Didn\'t guess correctly!');
+}
+
+//function calls
+askQuestion('Was I born in Colorado?', 'Wrong. I was born in New Mexico.', 0);
+askQuestion('Was I in the Coast Guard?', 'Wrong. I was in the Navy.', 0);
+askQuestion('Do I have an Associate\'s degree?', 'Wrong. I do have an Associate\'s degree.', 1);
+askQuestion('Is Bade my legal name?', 'Wrong. My legal name is Cristian.', 0);
+askQuestion('Do I have prior experience with coding?', 'Wrong. I do have experience in coding.', 1);
+playNumberGuess(10, 4);
+askMultiAnswerQuestion(['Torment: Numenera','Legend Of Zelda: Breath Of The Wild','Armello'], 6);
 
 //Goodbye message
 alert('Thank you for taking the quiz, ' + userName + '. You got ' + numAnswersCorrect + ' correct!');
