@@ -1,6 +1,9 @@
 ## Synopsis
 
-This project is a webpage with a biography about the author and a short quiz to let the user know about the author.
+This project is a webpage with a biography about the author and a short quiz to let the user know about the author. This code was developed collaboratively by Ashley Biermann and Bade Habib.
+
+Driver: Ashley Biermann
+Navigator: Bade Habib
 
 ## Code Example
 
