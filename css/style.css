@@ -33,10 +33,14 @@ p {
 
 ul {
   color: purple;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 ol {
   color: purple;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 /* Stylings for elements with authorcredit id */
