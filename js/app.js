@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-=== Lab 03 Planning ===
+=== Lab Planning ===
 1. (HTML) Create 'Top Ten' (any) as an ordered list [X]
 2. (HTML) Convert work experience and education to an unordered list
 3. (JS) Add 6th question to guessing game that takes in a numeric input and prompts user to guess a number - use a random number generator [X]
@@ -20,27 +20,25 @@ alert('Welcome, ' + userName + ', to Bade\'s About Me quiz!');
 
 var numAnswersCorrect = 0;
 
-var prompts = ['Was I born in Colorado?','Was I in the Coast Guard?','Do I have an Associate\'s degree?','Is Bade my legal name?','Do I have prior experience with coding?']
-var corrections = ['Wrong. I was born in New Mexico.','Wrong. I was in the Navy.','Wrong. I do have an Associate\'s degree.','Wrong. My legal name is Cristian.','Wrong. I do have experience in coding.']
-var correctAnswers1to5 = [0,0,1,0,1]
+var prompts = ['Was I born in Colorado?','Was I in the Coast Guard?','Do I have an Associate\'s degree?','Is Bade my legal name?','Do I have prior experience with coding?'];
+var corrections = ['Wrong. I was born in New Mexico.','Wrong. I was in the Navy.','Wrong. I do have an Associate\'s degree.','Wrong. My legal name is Cristian.','Wrong. I do have experience in coding.'];
+var correctAnswers1to5 = [0,0,1,0,1];
 
 for(let i = 0; i < prompts.length; i++) {
   if(correctAnswers1to5[i]) {
-    var trueAnswer = ['yes', 'y']
-    var falseAnswer = ['no', 'n']
+    var trueAnswer = ['yes', 'y'];
+    var falseAnswer = ['no', 'n'];
   } else {
-    var trueAnswer = ['no', 'n']
-    var falseAnswer = ['yes', 'y']
+    var trueAnswer = ['no', 'n'];
+    var falseAnswer = ['yes', 'y'];
   }
 
   let currPrompt = prompt(prompts[i]).toLowerCase();
 
   if(currPrompt === trueAnswer[0] || currPrompt === trueAnswer[1]) {
-    console.log('Correct!');
     alert('Correct!');
     numAnswersCorrect++;
   } else if(currPrompt === falseAnswer[0] || currPrompt === falseAnswer[1]) {
-    console.log(corrections[i]);
     alert(corrections[i]);
   }
 }
